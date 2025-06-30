@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: be_sora
+    env: php
+    buildCommand: composer install --no-dev
+    startCommand: php artisan serve --host 0.0.0.0 --port 10000
+    plan: free
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_URL
+        value: https://be-sora.onrender.com
